@@ -2,6 +2,7 @@ const express = require("express");
 const { uploadDestination, getDestinationById, getAllDestinations, updateDestination, deleteDestination } = require("../controllers/destination.controller");
 const { uploadHotel, getAllHotels, getHotelById, updateHotel, deleteHotel } = require("../controllers/hotels.controller");
 const { uploadShoppingItem, getAllShoppingItems, getShoppingItemById, updateShoppingItem, deleteShoppingItem } = require("../controllers/shoppingItems.controller");
+const { testAPi } = require("../controllers/studentDetails.controller");
 
 const router = express.Router();
 
@@ -22,5 +23,6 @@ router.get('/shoppingItems', getAllShoppingItems);
 router.get('/shoppingItems/:id', getShoppingItemById);
 router.put('/shoppingItems/:id', updateShoppingItem);
 router.delete('/shoppingItems/:id', deleteShoppingItem);
+router.post("/testApi",testAPi)
 
 module.exports = router;

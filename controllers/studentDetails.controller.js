@@ -624,6 +624,9 @@ const updateFamilyCurrentRole = async (req, res) => {
     res.status(500).json({ message: 'Error updating family score', error: error.message });
   }
 };
+const testAPi= async (req,res)=>{
+  console.log(req.body)
+}
 
 module.exports = {
   uploadFamilyDetails,
@@ -639,5 +642,6 @@ module.exports = {
   uploadSelectedNutrients,
   updateShoppingMessage,
   updateFamilyScore,
-  updateFamilyCurrentRole
+  updateFamilyCurrentRole,
+  testAPi
 };
