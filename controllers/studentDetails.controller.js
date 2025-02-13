@@ -625,7 +625,8 @@
 //   }
 // };
 const testAPi= async (req,res)=>{
-  console.log(req.body)
+  console.log("Webhook received:", req.body);
+  res.status(200).send("OK");  
 }
 
 module.exports = {
