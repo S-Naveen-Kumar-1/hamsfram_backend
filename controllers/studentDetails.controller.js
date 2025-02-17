@@ -1,4 +1,4 @@
-const JitsiMeetingData = require('../models/JitsiMeetingData');
+const JitsiMeetingData=require('../model/jitsi.model');
 
 // Function to handle meeting join event
 const joinMeeting = async (req, res) => {
