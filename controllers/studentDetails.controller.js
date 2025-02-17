@@ -33,12 +33,16 @@ const leaveMeeting = async (req, res) => {
         const { eventType, timestamp, data,sessionId } = req.body;
 
         if (eventType === "PARTICIPANT_LEFT") {
-            await JitsiMeetingData.findOneAndUpdate(
-                { name: data.name, meetingId: sessionId,type:eventType },
-                { $set: { timeStamp: new Date(timestamp).toISOString(), time: timestamp,} },
-                { new: true }
-            );
-            console.log(`Participant left: ${data.name}`);
+            const newEntry = new JitsiMeetingData({
+                name: data.name,
+                timeStamp: timestamp,
+                time: new Date(timestamp).toISOString(),
+                meetingId: sessionId,
+                type:eventType
+            });
+
+            await newEntry.save();
+            console.log("Participant joined data saved:", newEntry);
         }
 
         res.status(200).send("OK");
