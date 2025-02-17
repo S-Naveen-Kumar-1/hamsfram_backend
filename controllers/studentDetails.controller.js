@@ -9,9 +9,10 @@ const joinMeeting = async (req, res) => {
         if (eventType === "PARTICIPANT_JOINED") {
             const newEntry = new JitsiMeetingData({
                 name: data.name,
-                timeStamp: new Date(timestamp).toISOString(),
-                time: timestamp,
-                meetingId: data.conference,
+                timeStamp: timestamp,
+                time: new Date(timestamp).toISOString(),
+                meetingId: sessionId,
+                type:eventType
             });
 
             await newEntry.save();
@@ -33,8 +34,8 @@ const leaveMeeting = async (req, res) => {
 
         if (eventType === "PARTICIPANT_LEFT") {
             await JitsiMeetingData.findOneAndUpdate(
-                { name: data.name, meetingId: data.conference },
-                { $set: { leaveTimeStamp: new Date(timestamp).toISOString(), leaveTime: timestamp } },
+                { name: data.name, meetingId: sessionId},
+                { $set: { leaveTimeStamp: new Date(timestamp).toISOString(), leaveTime: timestamp,type:eventType } },
                 { new: true }
             );
             console.log(`Participant left: ${data.name}`);
