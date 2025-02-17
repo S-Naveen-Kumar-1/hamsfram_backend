@@ -34,8 +34,8 @@ const leaveMeeting = async (req, res) => {
 
         if (eventType === "PARTICIPANT_LEFT") {
             await JitsiMeetingData.findOneAndUpdate(
-                { name: data.name, meetingId: sessionId},
-                { $set: { leaveTimeStamp: new Date(timestamp).toISOString(), leaveTime: timestamp,type:eventType } },
+                { name: data.name, meetingId: sessionId,type:eventType },
+                { $set: { timeStamp: new Date(timestamp).toISOString(), time: timestamp,} },
                 { new: true }
             );
             console.log(`Participant left: ${data.name}`);
