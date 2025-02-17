@@ -4,7 +4,7 @@ const JitsiMeetingData=require('../model/jitsi.model');
 const joinMeeting = async (req, res) => {
     try {
         console.log("Webhook received:", req.body);
-        const { eventType, timestamp, data } = req.body;
+        const { eventType, timestamp, data,sessionId } = req.body;
 
         if (eventType === "PARTICIPANT_JOINED") {
             const newEntry = new JitsiMeetingData({
@@ -30,7 +30,7 @@ const joinMeeting = async (req, res) => {
 const leaveMeeting = async (req, res) => {
     try {
         console.log("Webhook received:", req.body);
-        const { eventType, timestamp, data } = req.body;
+        const { eventType, timestamp, data,sessionId } = req.body;
 
         if (eventType === "PARTICIPANT_LEFT") {
             await JitsiMeetingData.findOneAndUpdate(
