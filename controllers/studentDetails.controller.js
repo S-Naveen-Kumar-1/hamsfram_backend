@@ -57,9 +57,9 @@ const roomCreated = async (req, res) => {
         console.log("Webhook received: roomCreated", req.body);
         const { eventType, timestamp, data,sessionId } = req.body;
 
-        if (eventType === "PARTICIPANT_LEFT") {
+        if (eventType === "ROOM_CREATED") {
             const newEntry = new JitsiMeetingData({
-                name: data.name,
+            
                 timeStamp: timestamp,
                 time: new Date(timestamp).toISOString(),
                 meetingId: sessionId,
@@ -81,9 +81,9 @@ const roomDestroyed = async (req, res) => {
         console.log("Webhook received: roomDestroyed", req.body);
         const { eventType, timestamp, data,sessionId } = req.body;
 
-        if (eventType === "PARTICIPANT_LEFT") {
+        if (eventType === "ROOM_DESTROYED") {
             const newEntry = new JitsiMeetingData({
-                name: data.name,
+            
                 timeStamp: timestamp,
                 time: new Date(timestamp).toISOString(),
                 meetingId: sessionId,
