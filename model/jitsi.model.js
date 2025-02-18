@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const jitsiDataSchema = new mongoose.Schema({
     name: {
       type: String,
-      required: true,
+   
     },
     timeStamp: {
       type: String,
