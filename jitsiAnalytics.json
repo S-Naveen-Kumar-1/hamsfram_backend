@@ -1,0 +1,90 @@
+[
+    {
+      "_id": "67b43a7616389080b3533842",
+      "timeStamp": "1739864689569",
+      "time": "2025-02-18T07:44:49.569Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "ROOM_CREATED",
+      "__v": 0
+    },
+    {
+      "_id": "67b43a7616389080b3533844",
+      "name": "tutor",
+      "timeStamp": "1739864689878",
+      "time": "2025-02-18T07:44:49.878Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_JOINED",
+      "__v": 0
+    },
+    {
+      "_id": "67b43ace16389080b3533846",
+      "name": "71609-Kidfeb",
+      "timeStamp": "1739864778688",
+      "time": "2025-02-18T07:46:18.688Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_JOINED",
+      "__v": 0
+    },
+    {
+      "_id": "67b43b8216389080b3533848",
+      "name": "71551-Childdemo",
+      "timeStamp": "1739864957693",
+      "time": "2025-02-18T07:49:17.693Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_JOINED",
+      "__v": 0
+    },
+    {
+      "_id": "67b43c4416389080b353384e",
+      "name": "tech",
+      "timeStamp": "1739865153025",
+      "time": "2025-02-18T07:52:33.025Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_JOINED",
+      "__v": 0
+    },
+    {
+      "_id": "67b43cf716389080b3533850",
+      "name": "tech",
+      "timeStamp": "1739865332057",
+      "time": "2025-02-18T07:55:32.057Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_LEFT",
+      "__v": 0
+    },
+    {
+      "_id": "67b43d3016389080b3533852",
+      "name": "71551-Childdemo",
+      "timeStamp": "1739865388221",
+      "time": "2025-02-18T07:56:28.221Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_LEFT",
+      "__v": 0
+    },
+    {
+      "_id": "67b43d5316389080b3533854",
+      "name": "71609-Kidfeb",
+      "timeStamp": "1739865422991",
+      "time": "2025-02-18T07:57:02.991Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_LEFT",
+      "__v": 0
+    },
+    {
+      "_id": "67b43d5816389080b3533856",
+      "name": "tutor",
+      "timeStamp": "1739865428629",
+      "time": "2025-02-18T07:57:08.629Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "PARTICIPANT_LEFT",
+      "__v": 0
+    },
+    {
+      "_id": "67b43d5816389080b3533858",
+      "timeStamp": "1739865428632",
+      "time": "2025-02-18T07:57:08.632Z",
+      "meetingId": "e2cfa1bb-7b85-4225-8bae-e24d52008433",
+      "type": "ROOM_DESTROYED",
+      "__v": 0
+    }
+  ]

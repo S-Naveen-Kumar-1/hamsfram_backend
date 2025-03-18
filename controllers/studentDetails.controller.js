@@ -103,4 +103,15 @@ const roomDestroyed = async (req, res) => {
 const testAPi=async (req,res)=>{
     console.log(req.body)
 }
-module.exports = { joinMeeting, leaveMeeting,testAPi,roomCreated,roomDestroyed };
+const getAllMeetings = async (req, res) => {
+    try {
+        const meetings = await JitsiMeetingData.find({});
+        res.status(200).json(meetings);
+    } catch (error) {
+        console.error("Error fetching meeting data:", error);
+        res.status(500).send("Error retrieving data");
+    }
+};
+
+
+module.exports = { joinMeeting, leaveMeeting,testAPi,roomCreated,roomDestroyed,getAllMeetings };
