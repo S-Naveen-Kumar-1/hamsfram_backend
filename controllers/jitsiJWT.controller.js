@@ -5,32 +5,32 @@ const crypto = require('crypto');
 
 // Store your private key as a multi-line string in PEM format
 const privateKey = `-----BEGIN PRIVATE KEY-----
-MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCi9tJlg0HjcKcB
-AfwkGrswM6RWQfN8a/tCy7zcPxHrxdWtpSobYvLxw0f7HqtQsCyG6jc51ygOuchw
-+49L/VvLPCorjJSJs9cQnjOWInE3eALKdhJalA+qHgqT1oGl1BYBQvrBy0lv3pVL
-AVOdL7fOj/Y7ocZNflHY+pH+fjywPaxNT8teKHNvR/7FRjxF5WgRNmIRuIxhdFoS
-p//n+3mCI+qYIlSsS8yJoC1blVgsFt2nDx4sk4DNsQ1Xni5qLJcaLZjHC6gWHizJ
-rc8NCLDDkhxps2phPCavEx8DWUkZphSP5daL/fX0/kEh6seadYpDHZ0g7bEFr2Yc
-intERh/ZAgMBAAECggEBAJC+rk3f8cv0KUGp46yl2ZGMrPC4j2358yh3Ef6GPoKu
-K4aaZvYAQ00daHfR29RFRqdmrTrAsiGyPiisJ7EVDk1L2SDpMp3EkMd/3M4DNZBR
-FhmCGfc9/1PYbwi0xF7oK8tfFJ7A0y98AhqmyP+afKYKFGkO3bXC9yvEE5x5v6nB
-C8+ScMBYU9gpyFpJAYBxbD6Bg5ozA+18zGN7c6RH9NtJ4F1bmJ21eYePjhgmtj3h
-hkrP7VYyFw01k3pRIWfVfC5QPZ0xCTNwprATdejw4MfccDkjCaJnMrfJu+x5Imuk
-KUKHLyAXiFooJYoR4FZB2tPklOjq2W1wcr9p/pgpTaECgYEA+HfZi9u0PbAwUAfu
-l5V2bRfhp2UxHaJrAdyS6bp40Wwrie9hZSkn3Czpuw0GAESP3YRwLd9JjmQRjmc/
-0zLlOUapTluraEYSZmuT0reL2J+AGMhostNShhDHjRl1QnQfSenZgYj9dzviPMmc
-LA8sHGHYniu7ARz/8Ut4+joHrX0CgYEAp+dytfVW0pKEcItt6kHSsdQySNu7qUDX
-QN262KBZbQsYcIezDlgp/CTWXiX5DIE1IQeicpD3Pm/vhDeDv4tw+GUIGF2JlCcm
-nnDGMpETSbDOPh1iqhcs3ayNFPggWh1f7ZUPyBJtQJvjRuj/4kmidHXVCAvHGJy1
-VL99wNE2eo0CgYEAorPAhf/ZeCe+izmWeDaMNQXVYws1bWVk0vRAU8MiyGgf3pQd
-X+PiUSAr8aumiVhcKL9HwhIcFZzbjjd4KPGD/syRo1kN1htEg0LgqrQ8ZB6WACSD
-ws30lQu50GCiU2C8+GakYll1OLXDAPE4TfWlefRsp66VJzZ5NuWoE5saWfUCgYEA
-i7EPCf31XzoRQAVwzC45WkQeFenipr1QmSIguuwlmohZq/3qZevJ+oK3axsSqmmx
-Ryqv57teSK8eShVZ4nnj4nVEF+lydjVgdv+Clj2HG48i+CDAnpyrcj6GHkUVvYOk
-9OhIef+Cr/dCTxO5GI6Ev3ntZEVQPtTaNIkg2dP2DF0CgYAhsnM6/aicQfwfHUz7
-HYCO266nW0ocIe68jLdkJpmavPQS6eUuaLRWhbMB17X1CtVvkrYaj6na+vSVmNzS
-bk8lR8EkyHV2fIXS/gzGDpP4Wzz9a0GBKPzlYCOUbKagLNjMY7xIX8wXqOL7QPTO
-ASPI1prZgFhV+q8HyxlCKPLhQw==
+MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDWIDhS1f53IFRd
+zLdjemXgTM+uXVW3cRvhRxgJSZaPZn3Zn1A1Cqt/Dq7rc64vtoHk7tPKBVakCMyb
+8bhGWAk4rWcPdGQBEO3vhVW1rA7sdjmclMHsEBv3unX9XUz1QOeVQkbR/i1ZJfSh
+Bh3FQ1IPQpEq+5Vpw3rDramw7AHbOt2sZ+dXTc/z5N6uTZe7vXj5QeYQuhZkt2K8
+XKBV505xpilBjPfNuN2hoZ9Xv52dkUR2T5K54KsbtiKCNTlmF+gLe66mpxtKY7OL
+LAB4AIWxnt5L+NpiHNs7rIRAg7fzI2H2nDlYT6RsYFWqvvLm7sp0V/VgL8AWyK+S
+P1kUpMdLAgMBAAECggEBALuJdqseX4OIXjvVC51l2wpLW+3UMzm6J/fzo1qnB+XK
+l1jdzorWMIPUoWD4bUu+ph+TCQ08BbkfN80xNPrvKgxo2wXPI7NHV41bk0jNTDjQ
+Bv9bzkhph4U92w8wAzIeSXYRmSNcYe1db9cEG1jk8F8LJ0elFySNn9z4IdIhsjKF
+zlwAmTWNBZCYjiJeqPVbSShhf9uumWOId8+owzaXeRWls2hfhoY4vG5wUysLkvvT
+X2Ei6QV7TVHm/Fajc18m0e165ORq1ivz4wMPoGhmgCninpAQmGvCRuntsHx2tH4D
+YuIl6zxbdfowaZGcj6o65CRrgL2d/8qcSKkN1olpR7ECgYEA90NqeIuNk9HFLs5A
+UWQiq0cBerQft3Pn+v7cnZeS/YibRG9hNFgkvWjz5sVDLqzAaUMV9tnDMzybdLlu
+nUwaxBx4u0mGer2DeFqRCNKMRLdw2qdk8JwmMteqFjxp/mXonze0psKibOIjpRVc
+7wc5Vs/5Nkk2pGgD4mahO6eENtMCgYEA3bEQWwz/8zbAMw7I5HjCYj9NCSI6d4zm
+9P4Zx2tZDLCDTgzSAsHBH9rawEAtgklSt6bM5mMWFVcQTcVZ+jEOHWO0N2nG+VGb
+Sd9Yebjp3b2IlOSz/MV3IBQZ7qDrAICzsJmbPgfWGtUdSbadIsGB8iYYcU+lxoix
+fixXpzHfUqkCgYEAnVJVkfEo2V5kmU09ewu9S0DYXhvw+iZS+U3jTJm+OnYKZFaB
+gG58oc7/MFteTXo4ykCW3wLaweTT/EZnbMmZViHPZ0p2t+2Qkqj9EqH0AVy9/0D2
+ZmjTnRG+9Hrn7aclhPhKhrfb5G9Vwpl/Ec6E2wlkRPf8Pkq3/frSp0QESWUCgYBT
+1+2JogcDIwfZx5Ou5QUPR0WJWMqoAEAxFBEH3M+W/wMJ98tNg53YwFrPLvaHOdfw
+4ULJN1xYwc7Guwbmmrrt3pGAC59XF8gVTkUV9Btu44nOVhjEVqJRHYkZOP7n98T9
+23pdIXWWPFeRU2FmjazpugKwiCD4TyZhw7962l/N0QKBgQDtZxNu4EqexGPUU93I
+RcKnoPQUsnbMkw4KCLVKRPVNPfXw7pzQZxXONMRQepjoU5pZ6ua4hDnLSEEfk3rf
+qhUJvZeUcycfXHFTpUsnFQHGR2FKnl7Y7sXgPnF6ra53kPIfL0isMUgq7qistzfM
+gJGMxqsQQ4h5wVbmokiqIireqQ==
 -----END PRIVATE KEY-----
 `;
 
@@ -76,8 +76,8 @@ const getJITSIJWT = async (req, res) => {
             name: userName,
             email: userEmail,
             avatar,
-            appId: "vpaas-magic-cookie-98baf07e5c814fcf916303445347ef17",
-            kid: "vpaas-magic-cookie-98baf07e5c814fcf916303445347ef17/5b6b0c"
+            appId: "vpaas-magic-cookie-58f484fa173f4cda981a9ed1d8fc7a8f",
+            kid: "vpaas-magic-cookie-58f484fa173f4cda981a9ed1d8fc7a8f/f9e04b"
         });
 
         res.json({ token });
