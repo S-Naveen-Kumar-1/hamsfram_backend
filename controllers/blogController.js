@@ -1,4 +1,4 @@
-const Blog = require("../model/Blog");
+const Blog = require("../model/blog.model");
 
 // Create a new blog
 const uploadBlog = async (req, res) => {
