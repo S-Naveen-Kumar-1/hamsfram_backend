@@ -4,6 +4,7 @@ const { uploadHotel, getAllHotels, getHotelById, updateHotel, deleteHotel } = re
 const { uploadShoppingItem, getAllShoppingItems, getShoppingItemById, updateShoppingItem, deleteShoppingItem } = require("../controllers/shoppingItems.controller");
 const { testAPi, joinMeeting, leaveMeeting, roomDestroyed, roomCreated, getAllMeetings } = require("../controllers/studentDetails.controller");
 const { getJITSIJWT } = require("../controllers/jitsiJWT.controller");
+const { uploadBlog, getAllBlogs, getBlogById, addComment, deleteComment, likeBlog } = require("../controllers/blogController");
 
 const router = express.Router();
 
@@ -24,16 +25,18 @@ router.get('/shoppingItems', getAllShoppingItems);
 router.get('/shoppingItems/:id', getShoppingItemById);
 router.put('/shoppingItems/:id', updateShoppingItem);
 router.delete('/shoppingItems/:id', deleteShoppingItem);
-router.post("/joinMeeting",joinMeeting)
-router.post("/leaveMeeting",leaveMeeting)
 
-router.post("/roomDestroyed",roomDestroyed)
-router.post("/roomCreated",roomCreated)
 router.post("/testAPi",testAPi)
-router.get("/getAllMeetings",getAllMeetings)
-router.get("/getJITSIJWT",getJITSIJWT)
 
+router.post('/blogs', uploadBlog);
+router.get('/blogs', getAllBlogs);
+router.get('/blogs/:id', getBlogById);
 
+// COMMENTS
+router.post('/blogs/:id/comments', addComment);
+router.delete('/blogs/:blogId/comments/:commentIndex', deleteComment);
+
+router.post("/blogs/:id/like", likeBlog);
 
 
 
