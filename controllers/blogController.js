@@ -24,6 +24,7 @@ const uploadBlog = async (req, res) => {
       data: savedBlog,
     });
   } catch (error) {
+    
     console.error("Error saving blog:", error);
     return res.status(400).json({
       success: false,
